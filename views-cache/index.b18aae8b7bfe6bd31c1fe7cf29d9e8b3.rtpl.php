@@ -14,7 +14,9 @@
 
 <!-- Main content -->
 <section class="content">
-
+<pre>
+<?php echo htmlspecialchars( @var_dump($_SESSION), ENT_COMPAT, 'UTF-8', FALSE ); ?>
+</pre>
   <!-- Your Page Content Here -->
 
 </section>
