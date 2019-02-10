@@ -18,7 +18,7 @@ $app->get('/', function() {
 	$page->setTpl("index");
 });
 
-$app->get('/admin', function() {
+$app->get('/admin/', function() {
     
 	User::verifyLogin();
 	
