@@ -18,7 +18,6 @@ class User extends Model
 			":LOGIN" => $login //bind dos parâmetros		
 		));
 		
-		var_dump($login);
 		if(count($results) === 0) //se não encontrou nada, podemos lançar uma exceção. 
 		{
 			throw new \Exception("Usuário inexistente ou senha inválida."); //a exceção está no escopo/namespace principal do PHP e não dentro do namespace Hcode\Model, pois não criamos nossa própria exception, por isso precisamos colocar a '\' pra ele achar a Exception principal. 
@@ -28,8 +27,6 @@ class User extends Model
 		$data = $results[0];
 		
 		//verificar a senha do usuário. password_verify recebe a senha informada, a senha do banco e ele retorna true ou false. 
-		var_dump($password); 
-		var_dump($data["despassword"]); die();
 		if(password_verify($password, $data["despassword"]) === true)
 		{
 			$user = new User(); //por esse(método login) ser um método estático, podemos criar uma instância de User aqui dentro. 
