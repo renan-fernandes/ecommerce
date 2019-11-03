@@ -21,7 +21,7 @@ class Product extends Model
 			$p->setData($row);
 			$row = $p->getValues();
 		}
-		
+
 		return $list;
 	}
 	
